@@ -1,0 +1,42 @@
+<div> 
+    <div class="container w- h-100 m-auto align-items-center d-flex flex-column centerpiece">
+        <div class="container my-5 d-flex flex-column">
+            <div class="h2 mx-auto mb-5">Wellcome</div>
+            <div class="row mb-12">
+                <div class= "h4" *ngIf="show==false"> {{ message }} </div>
+                <table *ngIf="show == true" class="table table-hover table-responsive">
+                    <thead class="thead-dark">
+                        <tr>
+                          <th scope="col">id</th>
+                          <th scope="col">First name</th>
+                          <th scope="col">Last name</th>
+                          <th scope="col">E-mail</th>
+                          <th scope="col">Permission 1</th>
+                          <th scope="col">Permission 2</th>
+                          <th scope="col">Permission 3</th>
+                          <th scope="col">Permission 4</th>
+                          <th scope="col">Permission 5</th>
+                          <th scope="col">Permission 6</th>
+                          <th scope="col">Permission 7</th>
+                          <th scope="col">Permission 8</th>
+                          <th scope="col">Permission 9</th>
+                          <th scope="col">Permission 10</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor = "let user of usersList" >
+                        <tr class='clickable-row' onclick>
+                            <th scope="row">{{ user.userId }}</th>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.lastName }}</td>
+                            <button (click)='editUser(user.userId)'>{{ user.email }}</button>
+                            <td *ngFor = "let per of user.permissions">{{ per.permissionName }}</td>
+                            <button *ngIf = 'updateAuth' type="button" (click)='editUser(user.userId)' class="btn btn-primary">Edit user</button>
+                            <button *ngIf = 'deleteAuth' type="button" (click)='deleteUser(user.userId)' class="btn btn-danger">Delete user</button>
+                        </tr>
+                    </tbody>
+                </table>
+            <div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<header>
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="navbar-brand fw-bold">Machine manager</div>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a [routerLink]="'/'" class="nav-link active" aria-current="page">Home</a>
+            <a *ngIf= 'flagCreate' [routerLink]="'create'" class="nav-link" aria-current="page">Create User</a>
+            <a *ngIf= 'create' [routerLink]="'create_machine'" class="nav-link" aria-current="page">Create Machine</a>
+            <a *ngIf= 'search' [routerLink]="'machines'" class="nav-link" aria-current="page">Machines</a>
+          </div>
+          <div class="d-flex" *ngIf = "getToken()!= ''">
+            <Button *ngIf="isLoggedIn()" class="btn btn-primary" type="button" (click)="logout()">Logout</Button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  <style>
+  #nav {
+    font-size: large;
+  }
+  #nav a {
+    font-weight: bold;
+  
+  }
+  #nav a:hover{
+      color: #0d6efd;
+  }
+  
+  </style>

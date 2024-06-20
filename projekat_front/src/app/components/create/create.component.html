@@ -1,0 +1,76 @@
+<div> 
+    <div class="container h-100 m-auto align-items-center d-flex flex-column centerpiece">
+        <div class="container my-5 d-flex flex-column">
+            <div class="h2 mx-auto mb-5">Create user</div>
+            <form  class="row mb-4 w-50 mx-auto">
+                <div *ngIf="errorsExists">
+                    <div  class="form-group col-lg-12 ps-2">
+                        <div *ngFor="let error of errorString" class="text-danger"> {{ error }} </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 ps-2 form-group">
+                    <input class="form-control" type="text" placeholder ="Name" id="name" name="name" [(ngModel)]="name" required>
+                </div>
+                <div class="col-lg-12 ps-2 form-group">
+                    <input class="form-control" type="text" placeholder ="Last name" id="lastName" name="lastName" [(ngModel)]="lastName" required>
+                </div>
+                <div class="col-lg-12 ps-2 form-group">
+                    <input class="form-control" type="text" placeholder ="E-mail" id="email" name="email" [(ngModel)]="email" required>
+                </div>
+                <div class="col-lg-12 ps-2 form-group">
+                    <input class="form-control" type="password" placeholder ="Password" id="password" name="password" [(ngModel)]="password" required>
+                </div>
+                <div class="col-lg-6">
+                    <br>
+                    <div class="form-check">
+                        <input [(ngModel)]= "read" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name ="read" checked>
+                        <label class="form-check-label" for="flexCheckChecked">read</label>
+                    </div>
+                    <div class="form-check">
+                        <input [(ngModel)]= "create" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name ="create" checked>
+                        <label class="form-check-label" for="flexCheckChecked">create</label>
+                    </div>
+                    <div class="form-check">
+                        <input [(ngModel)]= "update" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name ="update" checked>
+                        <label class="form-check-label" for="flexCheckChecked">update</label>
+                    </div>
+                    <div class="form-check">
+                        <input [(ngModel)]= "delete" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name ="delete" checked>
+                        <label class="form-check-label" for="flexCheckChecked">delete</label>
+                    </div>
+                    
+
+
+                    <div class="form-check">
+                        <input [(ngModel)]= "start" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name ="start" checked>
+                        <label class="form-check-label" for="flexCheckChecked">start machine</label>
+                    </div>
+                    <div class="form-check">
+                        <input [(ngModel)]= "stop" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name ="stop" checked>
+                        <label class="form-check-label" for="flexCheckChecked">stop machine</label>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input [(ngModel)]= "restart" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name ="restart" checked>
+                        <label class="form-check-label" for="flexCheckChecked">restart machine</label>
+                    </div>
+                    <div class="form-check">
+                        <input [(ngModel)]= "search" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name ="search" checked>
+                        <label class="form-check-label" for="flexCheckChecked">search machine</label>
+                    </div>
+                    <div class="form-check">
+                        <input [(ngModel)]= "destroy" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name ="destroy" checked>
+                        <label class="form-check-label" for="flexCheckChecked">destroy machine</label>
+                    </div>
+                    <div class="form-check">
+                        <input [(ngModel)]= "createMachine" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name ="createMachine" checked>
+                        <label class="form-check-label" for="flexCheckChecked">create machine</label>
+                    </div>
+                </div>
+                <div class="col-lg-12 ps-2 my-3 form-group">
+                    <button class="btn btn-primary w-50" type="button" (click)="createUser()">Create user</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
